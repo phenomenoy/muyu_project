@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪵 木鱼点击计数器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题和计数显示 -->
+        <header>
+            <h1>🪵 禅修木鱼</h1>
+            <p class="subtitle">点击木鱼，清心静思</p>
+            <div class="counter-display">
+                <span class="label">敲击次数：</span>
+                <span id="click-count" class="count">{{ clicks }}</span>
+                <span class="unit">次</span>
+            </div>
+        </header>
+
+        <!-- 木鱼图片 -->
+        <main>
+            <div class="muyu-container">
+                <img id="muyu" 
+                     src="{{ url_for('static', filename='img/muyu.png') }}" 
+                     alt="木鱼" 
+                     class="muyu-image">
+                <div class="click-effect" id="click-effect"></div>
+            </div>
+        </main>
+
+        <!-- 状态信息 -->
+        <footer>
+            <div class="status">
+                <button id="health-btn" class="health-btn">检查状态</button>
+                <div id="status-message" class="status-message"></div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 加载 JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
